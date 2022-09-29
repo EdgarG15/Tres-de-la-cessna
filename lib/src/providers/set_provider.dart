@@ -6,8 +6,8 @@ import '../environment/environment.dart';
 class SetProvider extends GetConnect {
   String url = '${Environment.API_URL}api/set';
 
-  Future<List<Set>> findByDatos() async {
-    Response response = await get('$url/findByDatos/', headers: {
+  Future<List<Set>> findBySet() async {
+    Response response = await get('$url/findBySet', headers: {
       'Content-Type': 'application/json',
     }); // ESPERAR HASTA QUE EL SERVIDOR NOS RETORNE LA RESPUESTA
 

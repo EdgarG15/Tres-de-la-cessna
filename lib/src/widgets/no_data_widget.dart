@@ -10,14 +10,14 @@ class NoDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
+      alignment: Alignment.topCenter,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             'assets/no_Data.png',
-            height: 100,
-            width: 100,
+            height: 400,
+            width: 500,
           ),
           const SizedBox(
             height: 20,
