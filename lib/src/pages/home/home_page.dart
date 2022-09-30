@@ -67,18 +67,21 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _set(Set set) {
-    return Container(
-      height: 60,
-      //width: 100,
-      margin: EdgeInsets.only(top: 20),
-      child: Card(
-        color: Colors.blue[700],
-        child: Center(
-          child: Text(
-            set.name ?? '',
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 18,
+    return GestureDetector(
+      onTap: () => con.goToCancionesPage(),
+      child: Container(
+        height: 60,
+        //width: 100,
+        margin: const EdgeInsets.only(top: 20),
+        child: Card(
+          color: Colors.blue[700],
+          child: Center(
+            child: Text(
+              set.name ?? '',
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+              ),
             ),
           ),
         ),
