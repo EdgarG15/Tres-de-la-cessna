@@ -7,7 +7,12 @@ import 'package:tres_de_la_cessna/src/pages/home/home_controller.dart';
 import 'package:tres_de_la_cessna/src/widgets/no_data_widget.dart';
 
 // ignore: use_key_in_widget_constructors
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   HomeController con = Get.put(HomeController());
 
   @override
@@ -68,7 +73,7 @@ class HomePage extends StatelessWidget {
 
   Widget _set(Set set) {
     return GestureDetector(
-      onTap: () => con.goToCancionesPage(),
+      onTap: () => con.goToCancionesPage(set),
       child: Container(
         height: 60,
         //width: 100,

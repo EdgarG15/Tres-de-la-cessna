@@ -15,7 +15,7 @@ class HomeController extends GetxController {
     Get.toNamed('/sets');
   }
 
-  void goToCancionesPage() {
-    Get.toNamed('/canciones');
+  void goToCancionesPage(Set set) {
+    Get.toNamed('/canciones', arguments: {'set': set.toJson()});
   }
 }
