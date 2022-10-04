@@ -2,8 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tres_de_la_cessna/src/models/set.dart';
+import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_controller.dart';
 
 class CancionesCreatePage extends StatelessWidget {
+  Set? set;
+  late CancionesCreateController con;
+  CancionesCreatePage({@required this.set}) {
+    con = Get.put(CancionesCreateController());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +58,7 @@ class CancionesCreatePage extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
-        //controller: con.nameController,
+        controller: con.nameController,
         keyboardType: TextInputType.text,
         decoration: const InputDecoration(
             hintText: 'Nombre', prefixIcon: Icon(Icons.music_video_outlined)),
@@ -62,7 +70,7 @@ class CancionesCreatePage extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       child: TextField(
-        //controller: con.nameController,
+        controller: con.letterController,
         maxLines: 10,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
@@ -82,7 +90,7 @@ class CancionesCreatePage extends StatelessWidget {
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => con.cancionesForm(),
           style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 15)),
           child: const Text(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/canciones_create_page.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/canciones_page.dart';
+import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_page.dart';
+import 'package:tres_de_la_cessna/src/pages/canciones/home/canciones_page.dart';
 import 'package:tres_de_la_cessna/src/pages/home/home_page.dart';
 import 'package:tres_de_la_cessna/src/pages/sets/sets_page.dart';
 
