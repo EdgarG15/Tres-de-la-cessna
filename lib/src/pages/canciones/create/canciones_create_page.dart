@@ -6,11 +6,7 @@ import 'package:tres_de_la_cessna/src/models/set.dart';
 import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_controller.dart';
 
 class CancionesCreatePage extends StatelessWidget {
-  Set? set;
-  late CancionesCreateController con;
-  CancionesCreatePage({@required this.set}) {
-    con = Get.put(CancionesCreateController());
-  }
+  CancionesCreateController con = Get.put(CancionesCreateController());
 
   @override
   Widget build(BuildContext context) {

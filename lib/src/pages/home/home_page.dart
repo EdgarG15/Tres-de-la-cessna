@@ -7,12 +7,7 @@ import 'package:tres_de_la_cessna/src/pages/home/home_controller.dart';
 import 'package:tres_de_la_cessna/src/widgets/no_data_widget.dart';
 
 // ignore: use_key_in_widget_constructors
-class HomePage extends StatefulWidget {
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
   HomeController con = Get.put(HomeController());
 
   @override

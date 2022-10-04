@@ -11,14 +11,14 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 class CancionesController extends GetxController {
   Set set = Set.fromJson(Get.arguments['set']);
 
-  void goToCancionesCreate() {
-    Get.toNamed('canciones_create');
+  void goToCancionesCreate(Set set) {
+    Get.toNamed('canciones_create', arguments: {'set': set.toJson()});
   }
 
-  void openBottomSheet(BuildContext context, Set set) async {
-    showMaterialModalBottomSheet(
-      context: context,
-      builder: (context) => CancionesCreatePage(set: set),
-    );
-  }
+  // void openBottomSheet(BuildContext context, Set set) async {
+  //   showMaterialModalBottomSheet(
+  //     context: context,
+  //     builder: (context) => CancionesCreatePage(set: set),
+  //   );
+  // }
 }

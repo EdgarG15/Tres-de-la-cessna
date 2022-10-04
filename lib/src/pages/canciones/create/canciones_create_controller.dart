@@ -7,7 +7,7 @@ import 'package:tres_de_la_cessna/src/models/set.dart';
 import 'package:tres_de_la_cessna/src/providers/canciones_provider.dart';
 
 class CancionesCreateController extends GetxController {
-  Set set = Set.fromJson(GetStorage().read('set') ?? {});
+  Set set = Set.fromJson(Get.arguments['set']);
 
   TextEditingController nameController = TextEditingController();
   TextEditingController letterController = TextEditingController();
@@ -17,11 +17,11 @@ class CancionesCreateController extends GetxController {
   void cancionesForm() async {
     String name = nameController.text;
     String letter = letterController.text;
-
     if (isValidForm(name, letter)) {
       Canciones canciones = Canciones(
         name: name,
         letter: letter,
+        idSet: set.id,
       );
       ResponseApi responseApi = await cancionesProvider.create(canciones);
       if (responseApi.success == true) {
@@ -44,7 +44,7 @@ class CancionesCreateController extends GetxController {
     return true;
   }
 
-  void goToCancionesCreate() {
-    Get.toNamed('canciones_create');
+  void goToCancionesCreate(Set set) {
+    Get.toNamed('canciones_create', arguments: {'set': set.toJson()});
   }
 }
