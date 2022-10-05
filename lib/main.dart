@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_page.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/home/canciones_page.dart';
+import 'package:tres_de_la_cessna/src/pages/canciones/list/canciones_page.dart';
 import 'package:tres_de_la_cessna/src/pages/home/home_page.dart';
+import 'package:tres_de_la_cessna/src/pages/letras/letras_page.dart';
 import 'package:tres_de_la_cessna/src/pages/sets/sets_page.dart';
 
 void main() {
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/home', page: () => HomePage()),
         GetPage(name: '/sets', page: () => SetsPage()),
         GetPage(name: '/canciones', page: () => CancionesPage()),
-        GetPage(name: '/canciones_create', page: () => CancionesCreatePage())
+        GetPage(name: '/canciones_create', page: () => CancionesCreatePage()),
+        GetPage(name: '/letras', page: () => LetrasPage())
       ],
     );
   }

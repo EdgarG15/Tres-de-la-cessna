@@ -51,4 +51,8 @@ class CancionesCreateController extends GetxController {
   void goToCancionesCreate(Set set) {
     Get.toNamed('canciones_create', arguments: {'set': set.toJson()});
   }
+
+  void goToLetrasPage(Canciones canciones) {
+    Get.toNamed('/letras', arguments: {'canciones': canciones.toJson()});
+  }
 }

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tres_de_la_cessna/src/models/set.dart';
 import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_controller.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/home/canciones_controller.dart';
-
+import 'package:tres_de_la_cessna/src/pages/canciones/list/canciones_controller.dart';
 import '../../../models/canciones.dart';
 import '../../../widgets/no_data_widget.dart';
 
@@ -47,7 +46,7 @@ class CancionesPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 20),
                     itemBuilder: (_, index) {
-                      return _canciones(snapshot.data![index], index);
+                      return _canciones(snapshot.data![index]);
                     });
               } else {
                 return Center(
@@ -63,9 +62,9 @@ class CancionesPage extends StatelessWidget {
         ));
   }
 
-  Widget _canciones(Canciones canciones, int index) {
+  Widget _canciones(Canciones canciones) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => con.goToLetrasPage(canciones),
       child: Container(
         height: 60,
         //width: 100,

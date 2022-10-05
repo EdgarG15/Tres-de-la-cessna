@@ -6,12 +6,21 @@ import 'package:tres_de_la_cessna/src/providers/canciones_provider.dart';
 class CancionesController extends GetxController {
   Set set = Set.fromJson(Get.arguments['set']);
   CancionesProvider cancionesProvider = CancionesProvider();
-  List<Canciones> canciones = [];
+  List<Canciones> cancionesList = [];
+  // Canciones canciones = Canciones.fromJson(Get.arguments['canciones']);
+
+  // void goToLetrasPage(Canciones canciones) {
+  //   Get.toNamed('/letras', arguments: {'canciones': canciones.toJson()});
+  // }
 
   Future<List<Canciones>> getCanciones() async {
-    canciones = await cancionesProvider.findBySet(set.id ?? '');
-    return canciones;
+    cancionesList = await cancionesProvider.findBySet(set.id ?? '');
+    return cancionesList;
   }
+
+  // void goToLetrasPage() {
+  //   Get.toNamed('/letras');
+  // }
 
   void goToHomePage() {
     Get.offAllNamed('/home');
