@@ -27,7 +27,7 @@ class CancionesCreateController extends GetxController {
       if (responseApi.success == true) {
         canciones.id = responseApi.data;
         GetStorage().write('canciones', canciones.toJson());
-        Get.back();
+        goToCancionesPage(set);
       }
     }
   }
@@ -42,6 +42,10 @@ class CancionesCreateController extends GetxController {
       return false;
     }
     return true;
+  }
+
+  void goToCancionesPage(Set set) {
+    Get.offAllNamed('/canciones', arguments: {'set': set.toJson()});
   }
 
   void goToCancionesCreate(Set set) {

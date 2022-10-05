@@ -7,21 +7,21 @@ import '../environment/environment.dart';
 class CancionesProvider extends GetConnect {
   String url = Environment.API_URL + 'api/canciones';
 
-  // Future<List<Canciones>> findByUser(String idUser) async {
-  //   Response response = await get('$url/findByUser/$idUser', headers: {
-  //     'Content-Type': 'application/json',
-  //   }); // ESPERAR HASTA QUE EL SERVIDOR NOS RETORNE LA RESPUESTA
+  Future<List<Canciones>> findBySet(String idSet) async {
+    Response response = await get('$url/findBySet/$idSet', headers: {
+      'Content-Type': 'application/json',
+    }); // ESPERAR HASTA QUE EL SERVIDOR NOS RETORNE LA RESPUESTA
 
-  //   if (response.statusCode == 401) {
-  //     Get.snackbar('Peticion denegada',
-  //         'Tu usuario no tiene permitido leer esta informacion');
-  //     return [];
-  //   }
+    if (response.statusCode == 401) {
+      Get.snackbar('Peticion denegada',
+          'Tu usuario no tiene permitido leer esta informacion');
+      return [];
+    }
 
-  //   List<Canciones> canciones = Canciones.fromJsonList(response.body);
+    List<Canciones> canciones = Canciones.fromJsonList(response.body);
 
-  //   return canciones;
-  // }
+    return canciones;
+  }
 
   Future<ResponseApi> create(Canciones canciones) async {
     Response response = await post('$url/create', canciones.toJson(), headers: {
