@@ -5,6 +5,7 @@ import 'package:tres_de_la_cessna/src/pages/canciones/list/canciones_page.dart';
 import 'package:tres_de_la_cessna/src/pages/home/home_page.dart';
 import 'package:tres_de_la_cessna/src/pages/letras/letras_page.dart';
 import 'package:tres_de_la_cessna/src/pages/sets/sets_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
       title: 'Los Tres de la Cessna',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        //brightness: Brightness.dark,
+        scaffoldBackgroundColor: Colors.black,
+        primarySwatch: Colors.amber,
+        textTheme: GoogleFonts.arsenalTextTheme(),
       ),
       home: HomePage(),
       getPages: [

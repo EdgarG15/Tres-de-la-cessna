@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text('LOS TRES DE LA CESSNA'),
       ),
       body: GetBuilder<HomeController>(
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => con.goToSets(),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.white,
         child: const Icon(Icons.add),
       ),
     );
@@ -70,18 +71,26 @@ class HomePage extends StatelessWidget {
     return GestureDetector(
       onTap: () => con.goToCancionesPage(set),
       child: Container(
-        height: 60,
+        padding: const EdgeInsets.symmetric(horizontal: 100),
+        height: 65,
         //width: 100,
         margin: const EdgeInsets.only(top: 20),
         child: Card(
-          color: Colors.blue[700],
-          child: Center(
-            child: Text(
-              set.name ?? '',
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
+          color: Colors.white,
+          child: ListTile(
+            title: Container(
+              alignment: Alignment.center,
+              child: Text(
+                set.name ?? '',
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
+            ),
+            trailing: IconButton(
+              icon: const Icon(Icons.more_vert),
+              onPressed: () {},
             ),
           ),
         ),

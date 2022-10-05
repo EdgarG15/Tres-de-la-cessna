@@ -10,23 +10,47 @@ class LetrasPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(con.canciones.name ?? ''),
-      ),
-      body: ListView(
-        children: [
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(top: 20, bottom: 50),
-              child: Text(
-                con.canciones.letter ?? '',
-                style:
-                    const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+    return Obx(
+      () => Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: Text(con.canciones.name ?? ''),
+          actions: <Widget>[
+            Container(
+              margin: const EdgeInsets.only(right: 10),
+              child: IconButton(
+                tooltip: 'Disminuir Tamaño',
+                onPressed: () => con.disminuirLetra(),
+                icon: const Icon(Icons.text_decrease),
               ),
             ),
-          ),
-        ],
+            Container(
+              margin: const EdgeInsets.only(right: 20),
+              child: IconButton(
+                tooltip: 'Aumentar Tamaño',
+                onPressed: () => con.aumentarLetra(),
+                icon: const Icon(Icons.text_increase),
+              ),
+            ),
+          ],
+        ),
+        body: ListView(
+          children: [
+            Center(
+              child: Container(
+                margin: const EdgeInsets.only(
+                    top: 20, bottom: 50, right: 10, left: 10),
+                child: Text(
+                  con.canciones.letter ?? '',
+                  style: TextStyle(
+                      fontSize: con.fontSize.value,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

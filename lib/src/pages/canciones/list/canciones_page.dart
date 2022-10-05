@@ -17,6 +17,7 @@ class CancionesPage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: _buttonCreate(),
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text(con.set.name ?? ''),
         leading: IconButton(
           onPressed: () => controller.goToHomePage(),
@@ -70,7 +71,7 @@ class CancionesPage extends StatelessWidget {
         //width: 100,
         margin: const EdgeInsets.only(top: 20),
         child: Card(
-          color: Colors.blue[600],
+          color: Colors.white,
           child: Container(
             alignment: Alignment.center,
             child: Text(
@@ -93,6 +94,7 @@ class CancionesPage extends StatelessWidget {
       height: 70,
       margin: const EdgeInsets.only(bottom: 20, right: 20),
       child: FloatingActionButton(
+        backgroundColor: Colors.white,
         onPressed: () => con.goToCancionesCreate(set),
         child: const Icon(Icons.music_note),
       ),
