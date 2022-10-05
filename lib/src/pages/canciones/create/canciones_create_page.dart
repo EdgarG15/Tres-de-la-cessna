@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/set.dart';
+
 import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_controller.dart';
 
+// ignore: must_be_immutable
 class CancionesCreatePage extends StatelessWidget {
   CancionesCreateController con = Get.put(CancionesCreateController());
 
@@ -72,8 +73,8 @@ class CancionesCreatePage extends StatelessWidget {
         decoration: InputDecoration(
           hintText: 'Letra',
           prefixIcon: Container(
-            margin: EdgeInsets.only(bottom: 190),
-            child: Icon(Icons.format_list_bulleted_rounded),
+            margin: const EdgeInsets.only(bottom: 190),
+            child: const Icon(Icons.format_list_bulleted_rounded),
           ),
         ),
       ),

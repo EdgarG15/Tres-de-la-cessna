@@ -7,7 +7,7 @@ import 'package:tres_de_la_cessna/src/pages/canciones/home/canciones_controller.
 import '../../../models/canciones.dart';
 import '../../../widgets/no_data_widget.dart';
 
-// ignore: must_be_immutable
+// ignore: must_be_immutable, use_key_in_widget_constructors
 class CancionesPage extends StatelessWidget {
   CancionesCreateController con = Get.put(CancionesCreateController());
   CancionesController controller = Get.put(CancionesController());

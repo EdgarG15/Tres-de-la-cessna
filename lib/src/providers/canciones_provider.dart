@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
 import 'package:tres_de_la_cessna/src/models/canciones.dart';
 import 'package:tres_de_la_cessna/src/models/response_api.dart';
-import 'package:tres_de_la_cessna/src/models/set.dart';
 import '../environment/environment.dart';
 
 class CancionesProvider extends GetConnect {
-  String url = Environment.API_URL + 'api/canciones';
+  String url = '${Environment.API_URL}api/canciones';
 
   Future<List<Canciones>> findBySet(String idSet) async {
     Response response = await get('$url/findBySet/$idSet', headers: {
