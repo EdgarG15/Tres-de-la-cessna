@@ -18,10 +18,16 @@ class HomePage extends StatelessWidget {
         title: const Text('LOS TRES DE LA CESSNA'),
       ),
       body: GetBuilder<HomeController>(
-        builder: (value) => Stack(
-          children: [
-            _listSets(context),
-          ],
+        builder: (value) => Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/LosTresDeLaCessna.png'),
+                  fit: BoxFit.cover)),
+          child: Stack(
+            children: [
+              _listSets(context),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -76,7 +82,7 @@ class HomePage extends StatelessWidget {
         //width: 100,
         margin: const EdgeInsets.only(top: 20),
         child: Card(
-          color: Colors.white,
+          color: Colors.white.withOpacity(0.9),
           child: ListTile(
             title: Container(
               alignment: Alignment.center,
@@ -84,7 +90,7 @@ class HomePage extends StatelessWidget {
                 set.name ?? '',
                 style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 18,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
             ),
