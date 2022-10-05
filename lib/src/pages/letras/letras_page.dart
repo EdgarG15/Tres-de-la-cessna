@@ -14,8 +14,19 @@ class LetrasPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(con.canciones.name ?? ''),
       ),
-      body: const Center(
-        child: Text('Cancion'),
+      body: ListView(
+        children: [
+          Center(
+            child: Container(
+              margin: const EdgeInsets.only(top: 20, bottom: 50),
+              child: Text(
+                con.canciones.letter ?? '',
+                style:
+                    const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
