@@ -122,6 +122,7 @@ class CancionesPage extends StatelessWidget {
               onSelected: (value) {
                 // if value 1 show dialog
                 if (value == 1) {
+                  controller.goToCancionesUpdate(canciones);
                   // if value 2 show dialog
                 } else if (value == 2) {}
               },

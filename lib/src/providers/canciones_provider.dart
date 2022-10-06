@@ -22,6 +22,27 @@ class CancionesProvider extends GetConnect {
     return canciones;
   }
 
+  Future<ResponseApi> updateCanciones(Canciones canciones) async {
+    Response response =
+        await put('$url/updateCanciones', canciones.toJson(), headers: {
+      'Content-Type': 'application/json',
+    });
+
+    if (response.body == null) {
+      Get.snackbar('Error', 'No se pudo actualizar la informacion');
+      return ResponseApi();
+    }
+
+    if (response.statusCode == 401) {
+      Get.snackbar('Error', 'No estas autorizado para realizar esta peticion');
+      return ResponseApi();
+    }
+
+    ResponseApi responseApi = ResponseApi.fromJson(response.body);
+
+    return responseApi;
+  }
+
   Future<ResponseApi> create(Canciones canciones) async {
     Response response = await post('$url/create', canciones.toJson(), headers: {
       'Content-Type': 'application/json',

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:tres_de_la_cessna/src/models/response_api.dart';
 import 'package:tres_de_la_cessna/src/models/set.dart';
@@ -21,7 +22,9 @@ class SetsUpdateController extends GetxController {
     String name = nameController.text;
 
     if (name.isNotEmpty) {
-      print(set.id);
+      if (kDebugMode) {
+        print(set.id);
+      }
       ProgressDialog progressDialog = ProgressDialog(context: context);
       progressDialog.show(max: 100, msg: 'Actualizando datos...');
       Set mySet = Set(
