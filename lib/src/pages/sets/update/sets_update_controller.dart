@@ -1,11 +1,12 @@
+import 'package:MusicaCessna/src/models/set.dart';
+import 'package:MusicaCessna/src/providers/set_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/response_api.dart';
-import 'package:tres_de_la_cessna/src/models/set.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:tres_de_la_cessna/src/providers/set_provider.dart';
 import 'package:sn_progress_dialog/progress_dialog.dart';
+
+import '../../../models/response_api.dart';
 
 class SetsUpdateController extends GetxController {
   Set set = Set.fromJson(Get.arguments['set']);

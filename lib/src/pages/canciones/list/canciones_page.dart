@@ -1,8 +1,8 @@
+import 'package:MusicaCessna/src/models/set.dart';
+import 'package:MusicaCessna/src/pages/canciones/create/canciones_create_controller.dart';
+import 'package:MusicaCessna/src/pages/canciones/list/canciones_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/set.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_controller.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/list/canciones_controller.dart';
 import '../../../models/canciones.dart';
 import '../../../widgets/no_data_widget.dart';
 

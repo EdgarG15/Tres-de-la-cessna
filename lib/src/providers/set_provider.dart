@@ -1,7 +1,7 @@
+import 'package:MusicaCessna/src/models/set.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/response_api.dart';
-import 'package:tres_de_la_cessna/src/models/set.dart';
 import '../environment/environment.dart';
+import '../models/response_api.dart';
 
 class SetProvider extends GetConnect {
   String url = '${Environment.API_URL}api/set';

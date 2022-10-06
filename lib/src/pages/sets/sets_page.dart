@@ -1,6 +1,6 @@
+import 'package:MusicaCessna/src/pages/sets/sets_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/pages/sets/sets_controller.dart';
 
 // ignore: use_key_in_widget_constructors, must_be_immutable
 class SetsPage extends StatelessWidget {

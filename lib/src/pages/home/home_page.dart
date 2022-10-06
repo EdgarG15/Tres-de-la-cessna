@@ -1,10 +1,11 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:MusicaCessna/src/models/set.dart';
+import 'package:MusicaCessna/src/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/set.dart';
-import 'package:tres_de_la_cessna/src/pages/home/home_controller.dart';
-import 'package:tres_de_la_cessna/src/widgets/no_data_widget.dart';
+
+import '../../widgets/no_data_widget.dart';
 
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatelessWidget {
@@ -16,6 +17,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text('LOS TRES DE LA CESSNA'),
+        centerTitle: true,
       ),
       body: GetBuilder<HomeController>(
         builder: (value) => Container(

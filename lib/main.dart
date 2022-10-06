@@ -1,12 +1,12 @@
+import 'package:MusicaCessna/src/pages/canciones/create/canciones_create_page.dart';
+import 'package:MusicaCessna/src/pages/canciones/list/canciones_page.dart';
+import 'package:MusicaCessna/src/pages/home/home_page.dart';
+import 'package:MusicaCessna/src/pages/letras/letras_page.dart';
+import 'package:MusicaCessna/src/pages/sets/sets_page.dart';
+import 'package:MusicaCessna/src/pages/sets/update/sets_update_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_page.dart';
-import 'package:tres_de_la_cessna/src/pages/canciones/list/canciones_page.dart';
-import 'package:tres_de_la_cessna/src/pages/home/home_page.dart';
-import 'package:tres_de_la_cessna/src/pages/letras/letras_page.dart';
-import 'package:tres_de_la_cessna/src/pages/sets/sets_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tres_de_la_cessna/src/pages/sets/update/sets_update_page.dart';
 
 import 'src/pages/canciones/update/canciones_update_page.dart';
 

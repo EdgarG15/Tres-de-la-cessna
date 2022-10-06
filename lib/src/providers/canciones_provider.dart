@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/canciones.dart';
-import 'package:tres_de_la_cessna/src/models/response_api.dart';
 import '../environment/environment.dart';
+import '../models/canciones.dart';
+import '../models/response_api.dart';
 
 class CancionesProvider extends GetConnect {
   String url = '${Environment.API_URL}api/canciones';

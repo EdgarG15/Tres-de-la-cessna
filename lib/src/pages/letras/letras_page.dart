@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/canciones.dart';
-import 'package:tres_de_la_cessna/src/pages/letras/letras_controller.dart';
+
+import '../../models/canciones.dart';
+import 'letras_controller.dart';
 
 // ignore: must_be_immutable, use_key_in_widget_constructors
 class LetrasPage extends StatelessWidget {

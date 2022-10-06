@@ -1,7 +1,7 @@
+import 'package:MusicaCessna/src/models/set.dart';
 import 'package:get/get.dart';
-import 'package:tres_de_la_cessna/src/models/canciones.dart';
-import 'package:tres_de_la_cessna/src/models/set.dart';
-import 'package:tres_de_la_cessna/src/providers/canciones_provider.dart';
+import '../../../models/canciones.dart';
+import '../../../providers/canciones_provider.dart';
 
 class CancionesController extends GetxController {
   Set set = Set.fromJson(Get.arguments['set']);
