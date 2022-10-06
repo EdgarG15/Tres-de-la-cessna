@@ -90,13 +90,52 @@ class HomePage extends StatelessWidget {
                 set.name ?? '',
                 style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 24,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            trailing: IconButton(
-              icon: const Icon(Icons.more_vert),
-              onPressed: () {},
+            trailing: PopupMenuButton<int>(
+              itemBuilder: (context) => [
+                // PopupMenuItem 1
+                PopupMenuItem(
+                  value: 1,
+                  // row with 2 children
+                  child: Row(
+                    children: const [
+                      Icon(Icons.update),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Actualizar")
+                    ],
+                  ),
+                ),
+                // PopupMenuItem 2
+                PopupMenuItem(
+                  value: 2,
+                  // row with two children
+                  child: Row(
+                    children: const [
+                      Icon(Icons.delete),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Eliminar")
+                    ],
+                  ),
+                ),
+              ],
+              //offset: Offset(0, 100),
+              color: Colors.grey[100],
+              elevation: 2,
+              // on selected we show the dialog box
+              onSelected: (value) {
+                // if value 1 show dialog
+                if (value == 1) {
+                  con.goToUpdateSetPage(set);
+                  // if value 2 show dialog
+                } else if (value == 2) {}
+              },
             ),
           ),
         ),

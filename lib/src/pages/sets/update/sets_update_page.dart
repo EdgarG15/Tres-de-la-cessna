@@ -1,13 +1,11 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:tres_de_la_cessna/src/pages/canciones/create/canciones_create_controller.dart';
+import 'sets_update_controller.dart';
 
-// ignore: must_be_immutable
-class CancionesCreatePage extends StatelessWidget {
-  CancionesCreateController con = Get.put(CancionesCreateController());
+// ignore: use_key_in_widget_constructors, must_be_immutable
+class SetsUpdatePage extends StatelessWidget {
+  SetsUpdateController con = Get.put(SetsUpdateController());
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,7 @@ class CancionesCreatePage extends StatelessWidget {
 
   Widget _boxForm(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.55,
+      height: MediaQuery.of(context).size.height * 0.45,
       margin: EdgeInsets.only(
           top: MediaQuery.of(context).size.height * 0.4, left: 50, right: 50),
       decoration: const BoxDecoration(
@@ -40,18 +38,13 @@ class CancionesCreatePage extends StatelessWidget {
           ]),
       child: SingleChildScrollView(
         child: Column(
-          children: [
-            _textYourInfo(),
-            _textFieldCancion(),
-            _textFieldLetra(),
-            _buttonRegister(context)
-          ],
+          children: [_textYourInfo(), _textFieldSet(), _buttonUpdate(context)],
         ),
       ),
     );
   }
 
-  Widget _textFieldCancion() {
+  Widget _textFieldSet() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
@@ -63,35 +56,17 @@ class CancionesCreatePage extends StatelessWidget {
     );
   }
 
-  Widget _textFieldLetra() {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-      child: TextField(
-        controller: con.letterController,
-        maxLines: 10,
-        keyboardType: TextInputType.text,
-        decoration: InputDecoration(
-          hintText: 'Letra',
-          prefixIcon: Container(
-            margin: const EdgeInsets.only(bottom: 190),
-            child: const Icon(Icons.format_list_bulleted_rounded),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buttonRegister(BuildContext context) {
+  Widget _buttonUpdate(BuildContext context) {
     return Container(
       height: 50,
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
       child: ElevatedButton(
-          onPressed: () => con.cancionesForm(),
+          onPressed: () => con.updateSets(context),
           style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 15)),
           child: const Text(
-            'AÑADIR',
+            'Actualizar',
             style: TextStyle(color: Colors.black),
           )),
     );
@@ -121,7 +96,7 @@ class CancionesCreatePage extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 40, bottom: 30),
       child: const Text(
-        'INGRESA LOS DATOS DE LA CANCION',
+        'INGRESA El NOMBRE DEL APARTADO',
         style: TextStyle(
           color: Colors.black,
         ),

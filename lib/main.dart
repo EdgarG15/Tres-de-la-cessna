@@ -6,6 +6,7 @@ import 'package:tres_de_la_cessna/src/pages/home/home_page.dart';
 import 'package:tres_de_la_cessna/src/pages/letras/letras_page.dart';
 import 'package:tres_de_la_cessna/src/pages/sets/sets_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tres_de_la_cessna/src/pages/sets/update/sets_update_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/sets', page: () => SetsPage()),
         GetPage(name: '/canciones', page: () => CancionesPage()),
         GetPage(name: '/canciones_create', page: () => CancionesCreatePage()),
-        GetPage(name: '/letras', page: () => LetrasPage())
+        GetPage(name: '/letras', page: () => LetrasPage()),
+        GetPage(name: '/sets/update', page: () => SetsUpdatePage()),
       ],
     );
   }

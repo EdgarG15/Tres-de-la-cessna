@@ -34,22 +34,29 @@ class LetrasPage extends StatelessWidget {
             ),
           ],
         ),
-        body: ListView(
-          children: [
-            Center(
-              child: Container(
-                margin: const EdgeInsets.only(
-                    top: 20, bottom: 50, right: 10, left: 10),
-                child: Text(
-                  con.canciones.letter ?? '',
-                  style: TextStyle(
-                      fontSize: con.fontSize.value,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+        body: ScrollConfiguration(
+          behavior: const ScrollBehavior(),
+          child: GlowingOverscrollIndicator(
+            axisDirection: AxisDirection.down,
+            color: Colors.white,
+            child: ListView(
+              children: [
+                Center(
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                        top: 20, bottom: 50, right: 10, left: 10),
+                    child: Text(
+                      con.canciones.letter ?? '',
+                      style: TextStyle(
+                          fontSize: con.fontSize.value,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

@@ -77,12 +77,12 @@ class SetsPage extends StatelessWidget {
 
   Widget _img() {
     return Container(
-      margin: const EdgeInsets.all(10),
-      alignment: Alignment.center,
+      padding: const EdgeInsets.all(10),
+      alignment: Alignment.topCenter,
       child: Image.asset(
         'assets/LosTresDeLaCessna.png',
-        width: 430,
-        height: 430,
+        width: 330,
+        height: 330,
       ),
     );
   }

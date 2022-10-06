@@ -72,15 +72,59 @@ class CancionesPage extends StatelessWidget {
         margin: const EdgeInsets.only(top: 20),
         child: Card(
           color: Colors.white,
-          child: Container(
-            alignment: Alignment.center,
-            child: Text(
-              canciones.name ?? '',
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          child: ListTile(
+            title: Container(
+              alignment: Alignment.center,
+              child: Text(
+                canciones.name ?? '',
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+            ),
+            trailing: PopupMenuButton<int>(
+              itemBuilder: (context) => [
+                // PopupMenuItem 1
+                PopupMenuItem(
+                  value: 1,
+                  // row with 2 children
+                  child: Row(
+                    children: const [
+                      Icon(Icons.update),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Actualizar")
+                    ],
+                  ),
+                ),
+                // PopupMenuItem 2
+                PopupMenuItem(
+                  value: 2,
+                  // row with two children
+                  child: Row(
+                    children: const [
+                      Icon(Icons.delete),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Eliminar")
+                    ],
+                  ),
+                ),
+              ],
+              //offset: Offset(0, 100),
+              color: Colors.grey[100],
+              elevation: 2,
+              // on selected we show the dialog box
+              onSelected: (value) {
+                // if value 1 show dialog
+                if (value == 1) {
+                  // if value 2 show dialog
+                } else if (value == 2) {}
+              },
             ),
           ),
         ),

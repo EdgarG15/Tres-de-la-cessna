@@ -22,6 +22,26 @@ class SetProvider extends GetConnect {
     return set;
   }
 
+  Future<ResponseApi> updateSet(Set set) async {
+    Response response = await put('$url/updateSet', set.toJson(), headers: {
+      'Content-Type': 'application/json',
+    });
+
+    if (response.body == null) {
+      Get.snackbar('Error', 'No se pudo actualizar la informacion');
+      return ResponseApi();
+    }
+
+    if (response.statusCode == 401) {
+      Get.snackbar('Error', 'No estas autorizado para realizar esta peticion');
+      return ResponseApi();
+    }
+
+    ResponseApi responseApi = ResponseApi.fromJson(response.body);
+
+    return responseApi;
+  }
+
   Future<ResponseApi> create(Set set) async {
     Response response = await post('$url/create', set.toJson(), headers: {
       'Content-Type': 'application/json',
