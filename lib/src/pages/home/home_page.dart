@@ -22,9 +22,11 @@ class HomePage extends StatelessWidget {
       body: GetBuilder<HomeController>(
         builder: (value) => Container(
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/LosTresDeLaCessna.png'),
-                  fit: BoxFit.cover)),
+            image: DecorationImage(
+              image: AssetImage('assets/LosTresDeLaCessna.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Stack(
             children: [
               _listSets(context),
@@ -53,7 +55,7 @@ class HomePage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 itemBuilder: (_, index) {
-                  return _set(snapshot.data![index]);
+                  return _set(snapshot.data![index], context);
                 },
               );
             } else {
@@ -75,11 +77,11 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _set(Set set) {
+  Widget _set(Set set, BuildContext context) {
     return GestureDetector(
       onTap: () => con.goToCancionesPage(set),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 100),
+        padding: const EdgeInsets.symmetric(horizontal: 80),
         height: 65,
         //width: 100,
         margin: const EdgeInsets.only(top: 20),
@@ -91,17 +93,16 @@ class HomePage extends StatelessWidget {
               child: Text(
                 set.name ?? '',
                 style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.black,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             trailing: PopupMenuButton<int>(
               itemBuilder: (context) => [
-                // PopupMenuItem 1
                 PopupMenuItem(
                   value: 1,
-                  // row with 2 children
                   child: Row(
                     children: const [
                       Icon(Icons.update),
@@ -112,10 +113,8 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                // PopupMenuItem 2
                 PopupMenuItem(
                   value: 2,
-                  // row with two children
                   child: Row(
                     children: const [
                       Icon(Icons.delete),
@@ -127,16 +126,14 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ],
-              //offset: Offset(0, 100),
               color: Colors.grey[100],
               elevation: 2,
-              // on selected we show the dialog box
               onSelected: (value) {
-                // if value 1 show dialog
                 if (value == 1) {
                   con.goToUpdateSetPage(set);
-                  // if value 2 show dialog
-                } else if (value == 2) {}
+                } else if (value == 2) {
+                  con.deleteSet(set, context);
+                }
               },
             ),
           ),

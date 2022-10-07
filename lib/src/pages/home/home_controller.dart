@@ -1,15 +1,31 @@
 import 'package:MusicaCessna/src/models/set.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-
+import 'package:get_storage/get_storage.dart';
+import 'package:sn_progress_dialog/progress_dialog.dart';
+import '../../models/response_api.dart';
 import '../../providers/set_provider.dart';
 
 class HomeController extends GetxController {
   SetProvider setProvider = SetProvider();
-  List<Set> set = [];
+  //Set set = Set.fromJson(Get.arguments['set']);
+  List<Set> sets = [];
 
   Future<List<Set>> getSets() async {
-    set = await setProvider.findBySet();
-    return set;
+    sets = await setProvider.findBySet();
+    return sets;
+  }
+
+  void deleteSet(Set set, BuildContext context) async {
+    ProgressDialog progressDialog = ProgressDialog(context: context);
+    progressDialog.show(max: 100, msg: 'Eliminando datos...');
+    Set mySet = Set(
+      id: set.id,
+    );
+    ResponseApi responseApi = await setProvider.deleteSet(mySet);
+    GetStorage().write('set', responseApi.data);
+    Get.snackbar("Proceso terminado", responseApi.message ?? '');
+    progressDialog.close();
   }
 
   void goToSets() {
