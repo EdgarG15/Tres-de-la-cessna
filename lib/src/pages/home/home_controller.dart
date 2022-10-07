@@ -21,11 +21,22 @@ class HomeController extends GetxController {
     progressDialog.show(max: 100, msg: 'Eliminando datos...');
     Set mySet = Set(
       id: set.id,
+      name: set.name,
     );
-    ResponseApi responseApi = await setProvider.deleteSet(mySet);
-    GetStorage().write('set', responseApi.data);
-    Get.snackbar("Proceso terminado", responseApi.message ?? '');
+    ResponseApi responseApi = await setProvider.deleteSet(set);
+    if (responseApi.success == true) {
+      Get.snackbar("Proceso terminado", responseApi.message ?? '');
+      GetStorage().write('set', responseApi.data);
+      progressDialog.close();
+      goToHome(set);
+    } else {
+      Get.snackbar("Proceso fallido", "El set no se pudo eliminar");
+    }
     progressDialog.close();
+  }
+
+  void goToHome(Set set) {
+    Get.toNamed('/home', arguments: {'set': set.toJson()});
   }
 
   void goToSets() {
