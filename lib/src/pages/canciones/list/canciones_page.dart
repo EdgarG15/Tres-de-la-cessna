@@ -7,9 +7,16 @@ import '../../../models/canciones.dart';
 import '../../../widgets/no_data_widget.dart';
 
 // ignore: must_be_immutable, use_key_in_widget_constructors
-class CancionesPage extends StatelessWidget {
+class CancionesPage extends StatefulWidget {
+  @override
+  State<CancionesPage> createState() => _CancionesPageState();
+}
+
+class _CancionesPageState extends State<CancionesPage> {
   CancionesCreateController con = Get.put(CancionesCreateController());
+
   CancionesController controller = Get.put(CancionesController());
+
   Set set = Set();
 
   @override
@@ -124,7 +131,11 @@ class CancionesPage extends StatelessWidget {
                 if (value == 1) {
                   controller.goToCancionesUpdate(canciones);
                   // if value 2 show dialog
-                } else if (value == 2) {}
+                } else if (value == 2) {
+                  setState(() {
+                    controller.deleteCanciones(canciones);
+                  });
+                }
               },
             ),
           ),

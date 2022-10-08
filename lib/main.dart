@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'src/pages/canciones/update/canciones_update_page.dart';
 
 void main() {

@@ -5,8 +5,6 @@ import 'package:MusicaCessna/src/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/no_data_widget.dart';
-
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatelessWidget {
   HomeController con = Get.put(HomeController());
@@ -59,18 +57,10 @@ class HomePage extends StatelessWidget {
                 },
               );
             } else {
-              return Center(
-                child: NoDataWidget(
-                  text: 'No hay Sets )=',
-                ),
-              );
+              return Container();
             }
           } else {
-            return Center(
-              child: NoDataWidget(
-                text: 'No hay Sets )=',
-              ),
-            );
+            return Container();
           }
         },
       ),
@@ -132,7 +122,7 @@ class HomePage extends StatelessWidget {
                 if (value == 1) {
                   con.goToUpdateSetPage(set);
                 } else if (value == 2) {
-                  con.deleteSet(set, context);
+                  con.deleteSet(set);
                 }
               },
             ),

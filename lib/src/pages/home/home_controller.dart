@@ -1,8 +1,7 @@
 import 'package:MusicaCessna/src/models/set.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:sn_progress_dialog/progress_dialog.dart';
 import '../../models/response_api.dart';
 import '../../providers/set_provider.dart';
 
@@ -16,9 +15,9 @@ class HomeController extends GetxController {
     return sets;
   }
 
-  void deleteSet(Set set, BuildContext context) async {
-    ProgressDialog progressDialog = ProgressDialog(context: context);
-    progressDialog.show(max: 100, msg: 'Eliminando datos...');
+  void deleteSet(Set set) async {
+    // ProgressDialog progressDialog = ProgressDialog(context: context);
+    // progressDialog.show(max: 100, msg: 'Eliminando datos...');
     Set mySet = Set(
       id: set.id,
       name: set.name,
@@ -27,12 +26,13 @@ class HomeController extends GetxController {
     if (responseApi.success == true) {
       Get.snackbar("Proceso terminado", responseApi.message ?? '');
       GetStorage().write('set', responseApi.data);
-      progressDialog.close();
-      goToHome(set);
+      //progressDialog.close();
+      update();
+      //goToHome(set);
     } else {
       Get.snackbar("Proceso fallido", "El set no se pudo eliminar");
     }
-    progressDialog.close();
+    // progressDialog.close();
   }
 
   void goToHome(Set set) {

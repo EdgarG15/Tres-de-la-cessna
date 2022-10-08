@@ -24,7 +24,7 @@ class SetProvider extends GetConnect {
 
   Future<ResponseApi> deleteSet(Set set) async {
     Response response =
-        await delete('$url/deleteSet', query: set.toJson(), headers: {
+        await delete('$url/deleteSet/${set.id}', query: set.toJson(), headers: {
       'Content-Type': 'application/json',
     });
 
