@@ -43,6 +43,7 @@ dependencies:
   modal_bottom_sheet: ^2.1.2
   google_fonts: ^3.0.1
   sn_progress_dialog: ^1.0.8
+  splash_screen_view: ^3.0.0
 
 
 dev_dependencies:

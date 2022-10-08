@@ -1,5 +1,6 @@
 import 'package:MusicaCessna/src/pages/canciones/create/canciones_create_page.dart';
 import 'package:MusicaCessna/src/pages/canciones/list/canciones_page.dart';
+import 'package:MusicaCessna/src/pages/home/home_controller.dart';
 import 'package:MusicaCessna/src/pages/home/home_page.dart';
 import 'package:MusicaCessna/src/pages/letras/letras_page.dart';
 import 'package:MusicaCessna/src/pages/sets/sets_page.dart';
@@ -7,7 +8,8 @@ import 'package:MusicaCessna/src/pages/sets/update/sets_update_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:splash_screen_view/SplashScreenView.dart';
+import 'package:splash_screen_view/splash_screen_view.dart';
 import 'src/pages/canciones/update/canciones_update_page.dart';
 
 void main() {
@@ -16,7 +18,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
         textTheme: GoogleFonts.arsenalTextTheme(),
       ),
-      home: HomePage(),
+      home: _splash(),
       getPages: [
         GetPage(name: '/home', page: () => HomePage()),
         GetPage(name: '/sets', page: () => SetsPage()),
@@ -39,6 +40,27 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/sets/update', page: () => SetsUpdatePage()),
         GetPage(name: '/canciones/update', page: () => CancionesUpdatePage()),
       ],
+    );
+  }
+
+  Widget _splash() {
+    return SplashScreenView(
+      navigateRoute: HomePage(),
+      duration: 5000,
+      imageSize: 500,
+      imageSrc: "assets/LosTresDeLaCessna.png",
+      text: "Los Tres de la Cessna",
+      textType: TextType.ColorizeAnimationText,
+      textStyle: const TextStyle(
+        fontSize: 40.0,
+      ),
+      colors: const [
+        Colors.yellow,
+        Colors.white,
+        Colors.amber,
+        Colors.white,
+      ],
+      backgroundColor: Colors.black,
     );
   }
 }
