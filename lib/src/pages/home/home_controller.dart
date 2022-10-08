@@ -23,7 +23,7 @@ class HomeController extends GetxController {
       id: set.id,
       name: set.name,
     );
-    ResponseApi responseApi = await setProvider.deleteSet(set);
+    ResponseApi responseApi = await setProvider.deleteSet(mySet);
     if (responseApi.success == true) {
       Get.snackbar("Proceso terminado", responseApi.message ?? '');
       GetStorage().write('set', responseApi.data);
