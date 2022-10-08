@@ -44,6 +44,7 @@ dependencies:
   google_fonts: ^3.0.1
   sn_progress_dialog: ^1.0.8
   splash_screen_view: ^3.0.0
+  step_progress_indicator: ^1.0.2
 
 
 dev_dependencies:

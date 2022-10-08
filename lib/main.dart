@@ -1,6 +1,5 @@
 import 'package:MusicaCessna/src/pages/canciones/create/canciones_create_page.dart';
 import 'package:MusicaCessna/src/pages/canciones/list/canciones_page.dart';
-import 'package:MusicaCessna/src/pages/home/home_controller.dart';
 import 'package:MusicaCessna/src/pages/home/home_page.dart';
 import 'package:MusicaCessna/src/pages/letras/letras_page.dart';
 import 'package:MusicaCessna/src/pages/sets/sets_page.dart';
@@ -9,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-import 'package:splash_screen_view/splash_screen_view.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'src/pages/canciones/update/canciones_update_page.dart';
 
 void main() {
@@ -63,4 +62,27 @@ class MyApp extends StatelessWidget {
       backgroundColor: Colors.black,
     );
   }
+
+  // Widget _pogressCircular() {
+  //   return Center(
+  //     child: Container(
+  //       height: 50,
+  //       width: 50,
+  //       alignment: Alignment.bottomCenter,
+  //       child: const CircularStepProgressIndicator(
+  //         totalSteps: 100,
+  //         currentStep: 72,
+  //         selectedColor: Colors.yellow,
+  //         unselectedColor: Colors.white,
+  //         padding: 0,
+  //         width: 100,
+  //         child: Icon(
+  //           Icons.music_note_sharp,
+  //           color: Colors.amber,
+  //           size: 25,
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
