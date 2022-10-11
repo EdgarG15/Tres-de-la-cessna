@@ -45,6 +45,21 @@ dependencies:
   sn_progress_dialog: ^1.0.8
   splash_screen_view: ^3.0.0
   step_progress_indicator: ^1.0.2
+  flutter_launcher_icons: ^0.10.0
+flutter_icons:
+  android: "MusicaCessna"
+  ios: true
+  image_path: "assets/LosTresDeLaCessna.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/LosTresDeLaCessna.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/LosTresDeLaCessna.png"
+    icon_size: 48 # min:48, max:256, default: 48
 
 
 dev_dependencies:
