@@ -14,11 +14,6 @@ class CancionesCreatePage extends StatelessWidget {
         children: [
           _backgroundCover(context),
           _boxForm(context),
-          Column(
-            children: [
-              _img(),
-            ],
-          ),
           _buttonBack(),
         ],
       ),
@@ -27,9 +22,9 @@ class CancionesCreatePage extends StatelessWidget {
 
   Widget _boxForm(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.55,
+      height: MediaQuery.of(context).size.height * 0.85,
       margin: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 0.4, left: 50, right: 50),
+          top: MediaQuery.of(context).size.height * 0.1, left: 50, right: 50),
       decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: <BoxShadow>[
@@ -95,17 +90,17 @@ class CancionesCreatePage extends StatelessWidget {
     );
   }
 
-  Widget _img() {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      alignment: Alignment.topCenter,
-      child: Image.asset(
-        'assets/LosTresDeLaCessna.png',
-        width: 330,
-        height: 330,
-      ),
-    );
-  }
+  // Widget _img() {
+  //   return Container(
+  //     padding: const EdgeInsets.all(10),
+  //     alignment: Alignment.topCenter,
+  //     child: Image.asset(
+  //       'assets/LosTresDeLaCessna.png',
+  //       width: 330,
+  //       height: 330,
+  //     ),
+  //   );
+  // }
 
   Widget _backgroundCover(BuildContext context) {
     return Container(
