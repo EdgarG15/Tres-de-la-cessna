@@ -16,11 +16,6 @@ class CancionesUpdatePage extends StatelessWidget {
         children: [
           _backgroundCover(context),
           _boxForm(context),
-          Column(
-            children: [
-              _img(),
-            ],
-          ),
           _buttonBack(),
         ],
       ),
@@ -29,9 +24,9 @@ class CancionesUpdatePage extends StatelessWidget {
 
   Widget _boxForm(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.55,
+      height: MediaQuery.of(context).size.height * 0.85,
       margin: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 0.4, left: 50, right: 50),
+          top: MediaQuery.of(context).size.height * 0.1, left: 50, right: 50),
       decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: <BoxShadow>[

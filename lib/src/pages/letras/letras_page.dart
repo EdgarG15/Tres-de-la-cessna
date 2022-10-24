@@ -46,7 +46,7 @@ class LetrasPage extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(
                         top: 20, bottom: 50, right: 10, left: 10),
-                    child: Text(
+                    child: SelectableText(
                       con.canciones.letter ?? '',
                       style: TextStyle(
                           fontSize: con.fontSize.value,
