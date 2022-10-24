@@ -64,7 +64,7 @@ class CancionesUpdatePage extends StatelessWidget {
       child: TextField(
         controller: con.letterController,
         maxLines: 10,
-        keyboardType: TextInputType.text,
+        keyboardType: TextInputType.multiline,
         decoration: InputDecoration(
           hintText: 'Letra',
           prefixIcon: Container(
