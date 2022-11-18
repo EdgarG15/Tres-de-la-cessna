@@ -8,7 +8,7 @@ class LetrasController extends GetxController {
 
   void disminuirLetra() {
     if (fontSize > 12) {
-      fontSize.value--;
+      fontSize.value -= 2;
     }
     if (kDebugMode) {
       print('El tamaño de la letra es: $fontSize');
@@ -17,7 +17,7 @@ class LetrasController extends GetxController {
 
   void aumentarLetra() {
     if (fontSize < 72) {
-      fontSize.value++;
+      fontSize.value += 2;
     }
     if (kDebugMode) {
       print('El tamaño de la letra es: $fontSize');
